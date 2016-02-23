@@ -55,6 +55,9 @@ function multishop_setup() {
 endif; // multishop_setup
 add_action( 'after_setup_theme', 'multishop_setup' );
 
+remove_action('woocommerce_pagination', 'woocommerce_pagination', 10);
+
+
 /**
  * Register Istok Web Google font for multishop.
  */
@@ -170,3 +173,6 @@ require get_template_directory() . '/functions/custom-header.php';
 
 /*** TGM ***/
 require get_template_directory() . '/functions/tgm-plugins.php';
+
+
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );

@@ -257,12 +257,13 @@ function wppb_front_end_login( $atts ){
 global $current_user;
 get_currentuserinfo();
 
-
-		$logged_in_message .= sprintf(__( 'Bienvenue, %1$s! %2$s', 'profile-builder' ), $current_user->user_firstname, $logout_url );
+		$name =$current_user->user_firstname;
+		if($name=="" )$name="Admin";
+		$logged_in_message .= sprintf(__( 'Bienvenue, %1$s! %2$s', 'profile-builder' ), $name, $logout_url );
 
         $logged_in_message .= '</p><!-- .wppb-alert-->';
 		
-		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name );
+		return apply_filters( 'wppb_login_message', $logged_in_message, $wppb_user->ID, $display_name ).'<a href="/wp/mon-compte">Mon compte</a></br>';
 		
 	}
 }

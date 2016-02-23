@@ -24,20 +24,9 @@ get_header( 'shop' ); ?>
         <i class="fa fa-th-large"></i> 
           <?php   global $wp_query;?>
           <p class="woocommerce-result-count">
-            <?php
-							$paged = max( 1, $wp_query->get( 'paged' ) );
-							$per_page = $wp_query->get( 'posts_per_page' );
-							$total = $wp_query->found_posts;
-							$first = ( $per_page * $paged ) - $per_page + 1;
-							$last = min( $total, $wp_query->get( 'posts_per_page' ) * $paged );
-							if ( 1 == $total ) {
-							_e( 'Showing the single result', 'multishop' );
-							} elseif ( $total <= $per_page || -1 == $per_page ) {
-							printf( __( 'Showing all %d results', 'multishop' ), $total );
-							} else {
-							printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'multishop' ), $first, $last, $total );
-							}
-							?>
+
+            <?php echo paginate_links( $args ); ?>
+
           </p>
           
         </div>
@@ -125,28 +114,15 @@ get_header( 'shop' ); ?>
         <?php endif; ?>
       </div>
       <div class="col-md-12 top-pagination no-padding-lr">
-        <div class="col-md-4 pagination-icon no-padding-lr"> 
-        			<i class="fa fa-th-large"></i>
-          <?php   global $wp_query;
-						if ( ! woocommerce_products_will_display() )
-						return;
-						?>
+        <div class="col-md-5 pagination-icon no-padding-lr"> 
+        <i class="fa fa-th-large"></i> 
+          <?php   global $wp_query;?>
           <p class="woocommerce-result-count">
-            <?php
-						$paged = max( 1, $wp_query->get( 'paged' ) );
-						$per_page = $wp_query->get( 'posts_per_page' );
-						$total = $wp_query->found_posts;
-						$first = ( $per_page * $paged ) - $per_page + 1;
-						$last = min( $total, $wp_query->get( 'posts_per_page' ) * $paged );
-						if ( 1 == $total ) {
-						_e( 'Showing the single result', 'multishop' );
-						} elseif ( $total <= $per_page || -1 == $per_page ) {
-						printf( __( 'Showing all %d results', 'multishop' ), $total );
-						} else {
-						printf( _x( 'Showing %1$d&ndash;%2$d of %3$d results', '%1$d = first, %2$d = last, %3$d = total', 'multishop' ), $first, $last, $total );
-						}
-						?>
+
+            <?php echo paginate_links( $args ); ?>
+
           </p>
+          
         </div>
 			 <div class="col-md-8 no-padding-lr">
           <div class="pagination-sorting">

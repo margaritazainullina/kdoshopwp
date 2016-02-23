@@ -5173,3 +5173,4 @@ function mysql_to_rfc3339( $date_string ) {
 	// Strip timezone information
 	return preg_replace( '/(?:Z|[+-]\d{2}(?::\d{2})?)$/', '', $formatted );
 }
+
