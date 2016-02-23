@@ -53,10 +53,10 @@ class wpdevart_countdown extends WP_Widget {
 		
 		$defaults = array( 
 			'title' 				=> '',
-			'text_for_day' 			=> 'Days',
-			'text_for_hour' 		=> 'Hours',
-			'text_for_minut' 		=> 'Minuts',
-			'text_for_second' 		=> 'Seconds',
+			'text_for_day' 			=> 'Jours',
+			'text_for_hour' 		=> 'Heures',
+			'text_for_minut' 		=> 'Minutes',
+			'text_for_second' 		=> 'Secondes',
 			'start_time' 			=> mktime (date("H"), date("i"), date("s"),date("n"), date("j"),date("Y")),
 			'end_time_type' 		=> 'time',
 			'end_time' 				=> '0,1,5',

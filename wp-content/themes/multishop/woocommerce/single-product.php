@@ -60,7 +60,7 @@ get_header( 'shop' ); ?>
           </div>
           <div class="clearfix"></div>
           <div class="product-availabilty">
-            <label><?php _e('Availability:','multishop'); ?></label>
+            <label><?php _e('Disponibilité:','multishop'); ?></label>
             <?php
 							// Availability
 							$availability = $product->get_availability();
@@ -68,7 +68,7 @@ get_header( 'shop' ); ?>
 							if ( $availability['availability'] )
 							echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
 							else
-							echo "<p>".__('Out Stock','multishop')."</p>";
+							echo "<p>".__('En rupture de stock','multishop')."</p>";
 							?>
             <span><?php echo $product->get_price_html(); ?></span> </div>
           <div class="product-count">
@@ -109,15 +109,15 @@ get_header( 'shop' ); ?>
 						$link['label']  = apply_filters( 'not_purchasable_text', __( 'Read More', 'multishop' ) );
 					}break;
 				}
-				if ( $product->product_type == 'simple' ) {
+				if ( $product->product_type == 'simple' && is_user_logged_in ()) {
    			  ?>
             <form action="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="cart" method="post" enctype='multipart/form-data'>
               <?php woocommerce_quantity_input(); ?>
               <button type="submit" class="single-add-cart">
-              <a  class="addcart-red-btn"><?php _e('add to cart','multishop'); ?> </a>
+              <a  class="addcart-red-btn"><?php _e('ACHETER','multishop'); ?> </a>
               </button>
             </form>
-            <?php } else {
+            <?php } else if ( is_user_logged_in ()) {
 									echo apply_filters( 'woocommerce_loop_add_to_cart_link', sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="%s button product_type_%s">%s</a>', esc_url( $link['url'] ), esc_attr( $product->id ), esc_attr( $product->get_sku() ), esc_attr( $link['class'] ), esc_attr( $product->product_type ), esc_html( $link['label'] ) ), $product, $link );
 								}
 							?>
@@ -130,8 +130,8 @@ get_header( 'shop' ); ?>
       <div class="col-md-12 product-tabs">
         <div id="horizontalTab" class="horizontal-tabs">
           <ul class="resp-tabs-list">
-            <li><?php _e('Product Description','multishop') ?></li>
-            <li><?php _e('Reviews','multishop') ?></li>
+            <li><?php _e('Description du produit','multishop') ?></li>
+            <li><?php _e('Avis','multishop') ?></li>
           </ul>
           <div class="resp-tabs-container">
             <div>
@@ -144,7 +144,7 @@ get_header( 'shop' ); ?>
             <div>
               <?php if ( comments_open() ) { ?>
               <li><a href="#">
-                <?php _e('Reviews', 'multishop'); ?>
+                <?php _e('Avis', 'multishop'); ?>
                 <?php echo comments_number(' (0)', ' (1)', ' (%)'); ?></a>
                 <section>
                   <?php comments_template(); ?>

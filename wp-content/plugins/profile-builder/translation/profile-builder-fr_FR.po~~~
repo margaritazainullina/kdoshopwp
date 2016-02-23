@@ -3125,7 +3125,7 @@ msgstr "La pièce jointe suivante a bien été supprimée :"
 
 #: ../front-end/class-formbuilder.php:413
 msgid "Send these credentials via email."
-msgstr "Envoyer ces identifiants par E-mail"
+msgstr "Envoyer ces identifiants par E-mail."
 
 #: ../front-end/extra-fields/extra-fields.php:99 ../front-end/login.php:92
 #: ../front-end/login.php:99 ../front-end/login.php:113

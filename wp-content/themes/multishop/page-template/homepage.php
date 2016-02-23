@@ -125,7 +125,9 @@ $multishop_options = get_option( 'multishop_theme_options' );
                 <?php esc_attr(the_title()); ?>
               </h5>
               
-              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop'); ?></a> </div>
+              <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> 
+                <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">
+                <?php _e('ADD TO CART','multishop'); ?></a> </div>
             </div>
           </div>
         </div>

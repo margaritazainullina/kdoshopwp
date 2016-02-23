@@ -96,7 +96,8 @@ get_header( 'shop' ); ?>
               	<span><?php echo $product->get_price_html(); ?></span>
                 <h5>  <?php esc_attr(the_title()); ?> </h5>
                </div> 
-                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop') ?></a> </div>
+                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">
+                  <?php _e('ADD TO CART','multishop') ?></a> </div>
               </div>
             </div>
           </div>

@@ -91,15 +91,29 @@ get_header( 'shop' ); ?>
             <?php $multishop_feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  ?>
             <div class="main-border">
               <?php if($multishop_feat_image!="") { ?>
+               <div class="product-text"> <h5>  <?php esc_attr(the_title()); ?> </h5></div>
               <img src="<?php echo esc_url($multishop_feat_image); ?>" alt="<?php _e('Banner','multishop'); ?>" class="img-responsive"  />
               <?php } ?>
               <div class="product-details"> 
               <div class="product-text">
 			  <?php if (!isset($product)) global $product; ?>
               	<span><?php echo $product->get_price_html(); ?></span>
-                <h5>  <?php esc_attr(the_title()); ?> </h5>
+                
                </div> 
-                <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop') ?></a> </div>
+                <div class="product-button"> 
+                	<a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button">
+                		<?php _e('DETAILS','multishop') ?></a> 
+                		<?php if (is_user_logged_in ()) { ?>
+                		<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button">
+                	   <?php  } if (is_user_logged_in ()) _e('ACHETER','multishop')  ?></a> 
+
+                	<div class="product-discount"> <?php 
+                	 $str = $product->get_price_html(); 
+					 $str = strip_tags($str);
+					 $pieces = explode(" ", $str);
+					 $discount = $pieces[1]*100/$pieces[0];
+                	echo round($discount).'%'?></div>
+                	</div>
               </div>
             </div>
           </div>

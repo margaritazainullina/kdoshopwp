@@ -817,7 +817,8 @@ class WC_Form_Handler {
 					}
 
 					// Feedback
-					wc_add_notice( sprintf( __( 'You are now logged in as <strong>%s</strong>', 'woocommerce' ), $user->display_name ) );
+					echo 'dgf';
+					 sprintf( __( 'Bonjour, %s</strong>', 'woocommerce' ), $user->display_name );
 
 					wp_redirect( apply_filters( 'woocommerce_login_redirect', $redirect, $user ) );
 					exit;

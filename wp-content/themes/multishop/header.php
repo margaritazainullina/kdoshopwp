@@ -76,10 +76,10 @@
         <div class="header-cart clearfix">
           <?php	
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))){ 
-		 global $woocommerce; ?>
+		 global $woocommerce; if (is_user_logged_in ()){?>
           <img src="<?php echo get_template_directory_uri(); ?>/images/addtocart.png" class="img-responsive" alt="">           
           <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'multishop'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'multishop'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-          <?php } ?>
+          <?php } } ?>
         </div>
       </div>
     </div>

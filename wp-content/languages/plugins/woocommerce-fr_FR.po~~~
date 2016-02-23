@@ -3889,7 +3889,7 @@ msgstr "Mot de passe requis"
 
 #: includes/class-wc-form-handler.php:820
 msgid "You are now logged in as <strong>%s</strong>"
-msgstr "Bonjour, <strong>%s</strong>"
+msgstr "Vous êtes actuellement connecté en tant que <strong>%s</strong>"
 
 #: includes/class-wc-form-handler.php:864
 msgid "Please enter your password."

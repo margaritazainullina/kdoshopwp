@@ -40,10 +40,10 @@ class wpdevart_countdown_front_end{
 		self::$id_for_content++;
 		$output_html='';
 		$curent_value= shortcode_atts( array(
-			"text_for_day" 			=> "days",
-			"text_for_hour"			=> "hours",
+			"text_for_day" 			=> "jours",
+			"text_for_hour"			=> "heures",
 			"text_for_minut"		=> "minutes",
-			"text_for_second"		=> "seconds",
+			"text_for_second"		=> "secondes",
 			"start_time"			=> mktime (date("H"), date("i"), date("s"),date("n"), date("j"),date("Y")),
 			"countdown_end_type"	=> "time",
 			"end_date"				=> date('d-m-Y 23:59'),
@@ -84,10 +84,10 @@ class wpdevart_countdown_front_end{
 
 			
 			$output_html.='<div class="countdown">
-				<span class="element_conteiner"><span  class="days time_left">'.$day_left.'</span><span class="time_description">'.$curent_value['text_for_day'].'</span></span>
-				<span class="element_conteiner"><span  class="hourse time_left">'.$hourse_left.'</span><span class="time_description">'.$curent_value['text_for_hour'].'</span></span>
-				<span class="element_conteiner"><span  class="minutes time_left">'.$minuts_left.'</span><span class="time_description">'.$curent_value['text_for_minut'].'</span></span>
-				<span class="element_conteiner"><span  class="secondes time_left">'.$seconds_left.'</span><span class="time_description">'.$curent_value['text_for_second'].'</span></span>
+				<span class="element_conteiner"><span  class="days time_left">'.$day_left.'</span><span class="time_description">'.'jours'.'</span></span>
+				<span class="element_conteiner"><span  class="hourse time_left">'.$hourse_left.'</span><span class="time_description">'.'heures'.'</span></span>
+				<span class="element_conteiner"><span  class="minutes time_left">'.$minuts_left.'</span><span class="time_description">'.'minutes'.'</span></span>
+				<span class="element_conteiner"><span  class="secondes time_left">'.$seconds_left.'</span><span class="time_description">'.'secondes'.'</span></span>
 			</div>';
 		$output_html.='</div>';
 		$output_html.='<script>'.$this->wpdevart_countdown_javascript($curent_value).'</script><style>'.$this->wpdevart_countdown_css($curent_value).'</style>';

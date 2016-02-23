@@ -20,16 +20,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'php');
+define('DB_NAME', 'wp217');
 
 /** MySQL database username */
-define('DB_USER', 'adminssY2rzg');
+define('DB_USER', 'wp217');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'azUd99uPaCQQ');
+define('DB_PASSWORD', 'P(F-h22S5G');
 
 /** MySQL hostname */
-define('DB_HOST', 'php-kdoshop.rhcloud.com');
+define('DB_HOST', '127.0.0.1');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -37,6 +37,7 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+define('WPLANG', 'fr_FR');
 /**#@+
  * Authentication Unique Keys and Salts.
  *

@@ -253,7 +253,12 @@ function wppb_front_end_login( $atts ){
 		}
 		$redirect_after_logout_url = apply_filters( 'wppb_after_logout_redirect_url', $redirect_after_logout_url );
 		$logout_url = '<a href="'.wp_logout_url( $redirect_after_logout_url ).'" class="wppb-logout-url" title="'.__( 'Log out of this account', 'profile-builder' ).'">'. __( 'Log out', 'profile-builder').' &raquo;</a>';
-		$logged_in_message .= sprintf(__( 'You are currently logged in as %1$s. %2$s', 'profile-builder' ), $display_name, $logout_url );
+		
+global $current_user;
+get_currentuserinfo();
+
+
+		$logged_in_message .= sprintf(__( 'Bienvenue, %1$s! %2$s', 'profile-builder' ), $current_user->user_firstname, $logout_url );
 
         $logged_in_message .= '</p><!-- .wppb-alert-->';
 		
